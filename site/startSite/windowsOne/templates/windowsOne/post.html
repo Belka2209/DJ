@@ -1,0 +1,23 @@
+{% extends 'windowsOne/base.html' %}
+
+{% block content %}
+<h1>{{post.name}}</h1>
+
+{% if post.photo %}
+<p><img class="img-article-left" src="{{post.photo.url}}"></p>
+{% endif %}
+
+{{post.content|linebreaks}}
+<table>
+    <tr><p align='left'><i>Стоимость:</i></p></tr>
+<tr><td>{{post.price|linebreaks}}</td><td><i>руб.</i></td></tr>
+
+</table>
+<p align='left'><i>Дата начала курса:</i></p>
+{{post.dataStart|date:"d-m-Y H:i:s"}}
+<p align='left'><i>Дата окончания курса:</i></p>
+{{post.data_end|date:"d-m-Y H:i:s"}}
+<p align="center">
+
+<!--<button type="button"><a href="{% url 'qwe' %}">Записаться на курс</a></button></p>-->
+{% endblock %}
